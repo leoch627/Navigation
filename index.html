@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="leochang的主页，包含简介和社交媒体等信息。">
+    <meta name="description" content="leochang's homepage with bio and social media links.">
     <title>leochang</title>
     <link rel="icon" href="https://avatars.githubusercontent.com/u/67500557?s=400&u=0fb184fabfcbc125a92203a05466188458bf4b09&v=4" type="image/x-icon">
     <style>
@@ -120,37 +120,135 @@
                 font-size: 1.5em;
             }
         }
+
+        /* 语言切换按钮样式 */
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #1e90ff;
+            border-radius: 5px;
+            color: #fff;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s ease;
+        }
+
+        .language-switch:hover {
+            background: rgba(30, 144, 255, 0.2);
+            border-color: #fff;
+        }
+
+        /* 隐藏非当前语言的内容 */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
+    <button class="language-switch" onclick="toggleLanguage()">中文</button>
+    
     <header>
-    <h1>leochang</h1>
-    <p>欢迎来到leochang的主页！</p>
+        <h1>leochang</h1>
+        <div class="lang-content lang-en active">
+            <p>Welcome to leochang's homepage!</p>
+        </div>
+        <div class="lang-content lang-zh">
+            <p>欢迎来到leochang的主页！</p>
+        </div>
     </header>
 
     <main>
-        <section>
-            <h2>社交平台</h2>
-            <ul>
-                <li><strong>GitHub</strong>: <a href="https://github.com/leoch627" target="_blank" rel="noopener noreferrer">https://github.com/leoch627</a></li>
-                <li><strong>Status</strong>: <a href="https://t.192542.xyz" target="_blank" rel="noopener noreferrer">https://t.192542.xyz</a></li>
-                <li><strong>Email</strong>: <a href="mailto:leoch627@gmail.com">leoch627@gmail.com</a></li>
-            </ul>
-        </section>
+        <!-- English Content -->
+        <div class="lang-content lang-en active">
+            <section>
+                <h2>Social Platforms</h2>
+                <ul>
+                    <li><strong>GitHub</strong>: <a href="https://github.com/leoch627" target="_blank" rel="noopener noreferrer">https://github.com/leoch627</a></li>
+                    <li><strong>Status</strong>: <a href="https://t.192542.xyz" target="_blank" rel="noopener noreferrer">https://t.192542.xyz</a></li>
+                    <li><strong>Email</strong>: <a href="mailto:leoch627@gmail.com">leoch627@gmail.com</a></li>
+                </ul>
+            </section>
 
-        <section>
-            <h2>关于我</h2>
-            <div class="about-me">
-                <img src="https://avatars.githubusercontent.com/u/67500557?s=400&u=0fb184fabfcbc125a92203a05466188458bf4b09&v=4" alt="leochang 的头像">
-                <p>你好，我是leochang，热爱技术、分享和创造。欢迎通过上方社交平台联系我！</p>
-            </div>
-        </section>
+            <section>
+                <h2>About Me</h2>
+                <div class="about-me">
+                    <img src="https://avatars.githubusercontent.com/u/67500557?s=400&u=0fb184fabfcbc125a92203a05466188458bf4b09&v=4" alt="leochang's avatar">
+                    <p>Hello, I'm leochang, passionate about technology, sharing, and creating. Feel free to connect with me through the social platforms above!</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Chinese Content -->
+        <div class="lang-content lang-zh">
+            <section>
+                <h2>社交平台</h2>
+                <ul>
+                    <li><strong>GitHub</strong>: <a href="https://github.com/leoch627" target="_blank" rel="noopener noreferrer">https://github.com/leoch627</a></li>
+                    <li><strong>Status</strong>: <a href="https://t.192542.xyz" target="_blank" rel="noopener noreferrer">https://t.192542.xyz</a></li>
+                    <li><strong>Email</strong>: <a href="mailto:leoch627@gmail.com">leoch627@gmail.com</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>关于我</h2>
+                <div class="about-me">
+                    <img src="https://avatars.githubusercontent.com/u/67500557?s=400&u=0fb184fabfcbc125a92203a05466188458bf4b09&v=4" alt="leochang 的头像">
+                    <p>你好，我是leochang，热爱技术、分享和创造。欢迎通过上方社交平台联系我！</p>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
-        <p>© 2025 leochang</p>
-        <p>Powered by <a href="https://www.ovhcloud.com" target="_blank" rel="noopener noreferrer">OVH</a></p>
-        <p>LICENSE: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0 DEED</a></p>
+        <div class="lang-content lang-en active">
+            <p>© 2025 leochang</p>
+            <p>Powered by <a href="https://www.ovhcloud.com" target="_blank" rel="noopener noreferrer">OVH</a></p>
+            <p>LICENSE: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0 DEED</a></p>
+        </div>
+        <div class="lang-content lang-zh">
+            <p>© 2025 leochang</p>
+            <p>Powered by <a href="https://www.ovhcloud.com" target="_blank" rel="noopener noreferrer">OVH</a></p>
+            <p>LICENSE: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0 DEED</a></p>
+        </div>
     </footer>
+
+    <script>
+        let currentLang = 'en';
+
+        function toggleLanguage() {
+            const button = document.querySelector('.language-switch');
+            const enElements = document.querySelectorAll('.lang-en');
+            const zhElements = document.querySelectorAll('.lang-zh');
+            const htmlTag = document.querySelector('html');
+            const metaDescription = document.querySelector('meta[name="description"]');
+
+            if (currentLang === 'en') {
+                // Switch to Chinese
+                currentLang = 'zh';
+                button.textContent = 'English';
+                htmlTag.setAttribute('lang', 'zh-CN');
+                metaDescription.setAttribute('content', 'leochang的主页，包含简介和社交媒体等信息。');
+                
+                enElements.forEach(el => el.classList.remove('active'));
+                zhElements.forEach(el => el.classList.add('active'));
+            } else {
+                // Switch to English
+                currentLang = 'en';
+                button.textContent = '中文';
+                htmlTag.setAttribute('lang', 'en');
+                metaDescription.setAttribute('content', 'leochang\'s homepage with bio and social media links.');
+                
+                zhElements.forEach(el => el.classList.remove('active'));
+                enElements.forEach(el => el.classList.add('active'));
+            }
+        }
+    </script>
 </body>
 </html>
